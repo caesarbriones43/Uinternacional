@@ -18,8 +18,10 @@ import {
   ScrollArea,
   rem,
   Image,
+  Affix,
+  Transition,
 } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { useDisclosure, useViewportSize, useWindowScroll } from '@mantine/hooks';
 
 import {
   IconNotification,
@@ -137,6 +139,9 @@ const mockdata = [
 export function MainHeader() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
+  const [scroll, scrollTo] = useWindowScroll();
+  const { height, width } = useViewportSize();
+
   const { classes, theme } = useStyles();
 
   const handleClick = (link: string) => {
@@ -169,118 +174,128 @@ export function MainHeader() {
   ));
 
   return (
-    <Box>
-      <Header height={65} px="md">
-        <Group position="apart" sx={{ height: '100%' }}>
-          <div className={classes.brandContainer}>
-            <Image
-              src={theme.colorScheme === 'dark' ? brandLogoDark.src : brandLogo.src}
-              fit="fill"
-            ></Image>
-          </div>
-          <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
-            <a href="/" className={classes.link}>
-              Nosotros
-            </a>
-            <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
-              <HoverCard.Target>
-                <a href="#" className={classes.link}>
+    <Affix position={{ top: 0 }}>
+      <Transition transition="slide-up" mounted={scroll.y > -2}>
+        {(transitionStyles) => (
+          <Box style={transitionStyles}>
+            <Header w={width} height={65} px="md">
+              <Group position="apart" sx={{ height: '100%' }}>
+                <div className={classes.brandContainer}>
+                  <Image
+                    src={theme.colorScheme === 'dark' ? brandLogoDark.src : brandLogo.src}
+                    fit="fill"
+                  ></Image>
+                </div>
+                <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
+                  <a href="/" className={classes.link}>
+                    Nosotros
+                  </a>
+                  <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+                    <HoverCard.Target>
+                      <a href="#" className={classes.link}>
+                        <Center inline>
+                          <Box component="span" mr={5}>
+                            Oferta Educativa
+                          </Box>
+                          <IconChevronDown size={16} color={'#a68829'} />
+                        </Center>
+                      </a>
+                    </HoverCard.Target>
+
+                    <HoverCard.Dropdown sx={{ overflow: 'hidden' }}>
+                      <Divider
+                        my="sm"
+                        mx="-md"
+                        color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'}
+                      />
+
+                      <SimpleGrid cols={2} spacing={0}>
+                        {links}
+                      </SimpleGrid>
+                    </HoverCard.Dropdown>
+                  </HoverCard>
+                  <a
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      handleClick('https://campus.iinternacional.edu.mx/moodle30/');
+                    }}
+                    className={classes.link}
+                  >
+                    Campus Virtual
+                  </a>
+                </Group>
+
+                <Group className={classes.hiddenMobile}>
+                  <Button className={classes.registerButton} color="#101232">
+                    <Text
+                      c="#a68829"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleClick(
+                          'https://docs.google.com/forms/d/1nVwxFYPDjQnEt8lkCZAutkC_sfKXi-NqvdT4VGEKwu0/prefill'
+                        );
+                      }}
+                    >
+                      Inscribete Ahora
+                    </Text>
+                  </Button>
+                </Group>
+
+                <Burger
+                  opened={drawerOpened}
+                  onClick={toggleDrawer}
+                  className={classes.hiddenDesktop}
+                />
+              </Group>
+            </Header>
+
+            <Drawer
+              opened={drawerOpened}
+              onClose={closeDrawer}
+              size="100%"
+              padding="md"
+              title={
+                <Image
+                  src={theme.colorScheme === 'dark' ? brandLogoDark.src : brandLogo.src}
+                  fit="fill"
+                ></Image>
+              }
+              className={classes.hiddenDesktop}
+              zIndex={1000000}
+            >
+              <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
+                <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
+
+                <a href="/" className={classes.link}>
+                  Nosotros
+                </a>
+                <UnstyledButton className={classes.link} onClick={toggleLinks}>
                   <Center inline>
                     <Box component="span" mr={5}>
                       Oferta Educativa
                     </Box>
-                    <IconChevronDown size={16} color={'#a68829'} />
+                    <IconChevronDown size={16} color={theme.fn.primaryColor()} />
                   </Center>
+                </UnstyledButton>
+                <Collapse in={linksOpened}>{links}</Collapse>
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleClick('https://campus.iinternacional.edu.mx/moodle30/');
+                  }}
+                  className={classes.link}
+                >
+                  Campus Virtual
                 </a>
-              </HoverCard.Target>
-
-              <HoverCard.Dropdown sx={{ overflow: 'hidden' }}>
-                <Divider
-                  my="sm"
-                  mx="-md"
-                  color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'}
-                />
-
-                <SimpleGrid cols={2} spacing={0}>
-                  {links}
-                </SimpleGrid>
-              </HoverCard.Dropdown>
-            </HoverCard>
-            <a
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                handleClick('https://campus.iinternacional.edu.mx/moodle30/');
-              }}
-              className={classes.link}
-            >
-              Campus Virtual
-            </a>
-          </Group>
-
-          <Group className={classes.hiddenMobile}>
-            <Button className={classes.registerButton} color="#101232">
-              <Text
-                c="#a68829"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  handleClick(
-                    'https://docs.google.com/forms/d/1nVwxFYPDjQnEt8lkCZAutkC_sfKXi-NqvdT4VGEKwu0/prefill'
-                  );
-                }}
-              >
-                Inscribete Ahora
-              </Text>
-            </Button>
-          </Group>
-
-          <Burger opened={drawerOpened} onClick={toggleDrawer} className={classes.hiddenDesktop} />
-        </Group>
-      </Header>
-
-      <Drawer
-        opened={drawerOpened}
-        onClose={closeDrawer}
-        size="100%"
-        padding="md"
-        title={
-          <Image
-            src={theme.colorScheme === 'dark' ? brandLogoDark.src : brandLogo.src}
-            fit="fill"
-          ></Image>
-        }
-        className={classes.hiddenDesktop}
-        zIndex={1000000}
-      >
-        <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
-          <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
-
-          <a href="/" className={classes.link}>
-            Nosotros
-          </a>
-          <UnstyledButton className={classes.link} onClick={toggleLinks}>
-            <Center inline>
-              <Box component="span" mr={5}>
-                Oferta Educativa
-              </Box>
-              <IconChevronDown size={16} color={theme.fn.primaryColor()} />
-            </Center>
-          </UnstyledButton>
-          <Collapse in={linksOpened}>{links}</Collapse>
-          <a
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              handleClick('https://campus.iinternacional.edu.mx/moodle30/');
-            }}
-            className={classes.link}
-          >
-            Campus Virtual
-          </a>
-          <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
-        </ScrollArea>
-      </Drawer>
-    </Box>
+                <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
+              </ScrollArea>
+            </Drawer>
+          </Box>
+        )}
+      </Transition>
+    </Affix>
   );
 }
