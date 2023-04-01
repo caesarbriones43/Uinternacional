@@ -1,5 +1,11 @@
 import { createStyles, Text, Container, ActionIcon, Group, rem, Image, Flex } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+import {
+  IconBrandWhatsapp,
+  IconBrandYoutube,
+  IconBrandInstagram,
+  IconBrandFacebook,
+} from '@tabler/icons-react';
+import Link from 'next/link';
 import brandLogoDark from '../../public/brand_logo_dark.svg';
 import wave from './wave.svg';
 
@@ -113,17 +119,32 @@ interface MainFooterProps {
 export function MainFooter({ data }: MainFooterProps) {
   const { classes, theme } = useStyles();
 
+  const handleClick = (link: string) => {
+    window.open(
+      link,
+      '_blank' // <- This is what makes it open in a new window.
+    );
+  };
+
+  const handleClickLink = (link: string) => {
+    const element = document.getElementById('#us');
+    element?.scrollIntoView();
+  };
+
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
-      <Text<'a'>
-        key={index}
-        className={classes.link}
-        component="a"
-        href={link.link}
-        onClick={(event) => event.preventDefault()}
+      <Link
+        href={`#${link.link}`}
+        style={{
+          textDecoration: 'inherit',
+          color: 'inherit',
+          cursor: 'auto',
+        }}
       >
-        {link.label}
-      </Text>
+        <Text key={index} className={classes.link}>
+          {link.label}
+        </Text>
+      </Link>
     ));
 
     return (
@@ -152,7 +173,7 @@ export function MainFooter({ data }: MainFooterProps) {
             </div>
 
             <Text size="xs" color="dimmed" className={classes.description}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              La Univesidad de los profesionales digitales
             </Text>
           </div>
           <div className={classes.groups}>{groups}</div>
@@ -165,13 +186,31 @@ export function MainFooter({ data }: MainFooterProps) {
 
           <Group spacing={0} className={classes.social} position="right" noWrap>
             <ActionIcon size="lg">
-              <IconBrandTwitter size="1.05rem" stroke={1.5} />
+              <IconBrandWhatsapp
+                size="1.05rem"
+                stroke={1.5}
+                onClick={() => {
+                  handleClick(
+                    'https://api.whatsapp.com/send/?phone=524493127372&text&type=phone_number&app_absent=0'
+                  );
+                }}
+              />
             </ActionIcon>
-            <ActionIcon size="lg">
-              <IconBrandYoutube size="1.05rem" stroke={1.5} />
-            </ActionIcon>
-            <ActionIcon size="lg">
+            <ActionIcon
+              size="lg"
+              onClick={() => {
+                handleClick('https://www.instagram.com/uinternacionalags/');
+              }}
+            >
               <IconBrandInstagram size="1.05rem" stroke={1.5} />
+            </ActionIcon>
+            <ActionIcon
+              size="lg"
+              onClick={() => {
+                handleClick('https://www.facebook.com/uinternacionalags/');
+              }}
+            >
+              <IconBrandFacebook size="1.05rem" stroke={1.5} />
             </ActionIcon>
           </Group>
         </Container>

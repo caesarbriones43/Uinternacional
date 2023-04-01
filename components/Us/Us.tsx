@@ -18,7 +18,7 @@ const useStyles = createStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     borderRadius: theme.radius.md,
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
+    backgroundColor: theme.white,
     [theme.fn.smallerThan('sm')]: {
       flexDirection: 'column-reverse',
       padding: theme.spacing.xl,
@@ -78,7 +78,7 @@ export function Us() {
         <div className={classes.wrapper}>
           <div className={classes.body}>
             <Group position="center">
-              <Badge size="xl" c="#ffffff" bg={'#101232'}>
+              <Badge size="xl" c="#ffffff" bg={'#101232'} id="us">
                 Nosotros
               </Badge>
             </Group>
@@ -91,8 +91,9 @@ export function Us() {
               Visión
             </Title>
             <Text fw={500} fz="lg" mb={5}>
-              Enriquecemos el talento humano con las competencias necesarias para desarrollarse
-              profesionalmente en un entorno de transformación digital
+              Ser la universidad preferida de los estudiantes y empleadores, destacándose por su
+              excelencia académica, investigación de vanguardia y una sólida formación en liderazgo
+              y servicio.
             </Text>
           </div>
           <Image src={image.src} className={classes.image} />

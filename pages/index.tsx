@@ -1,5 +1,3 @@
-import { Welcome } from '../components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
 import { MainHeader } from '../components/Header/MainHeader';
 import { MainFooter } from '../components/Footer/MainFooter';
 import { Slider } from '../components/Slider/Slider';
@@ -21,19 +19,19 @@ export default function HomePage() {
             title: 'U Internacional',
             links: [
               {
-                link: 'https://example.com',
+                link: 'us',
                 label: 'Nosotros',
               },
               {
-                link: 'https://example.com',
+                link: 'offert',
                 label: 'Oferta Educativa',
               },
               {
-                link: 'https://example.com',
+                link: '',
                 label: 'Reglamento Institucional',
               },
               {
-                link: 'https://example.com',
+                link: '',
                 label: 'Inscríbete',
               },
             ],
@@ -42,20 +40,20 @@ export default function HomePage() {
             title: 'Contacto',
             links: [
               {
-                link: 'https://example.com',
+                link: '',
                 label:
                   'Manuel de Velasco Martínez No. 101 – B, Colonia Solidaridad. Rincón de Romos, Ags',
               },
               {
-                link: 'https://example.com',
+                link: '',
                 label: 'Teléfono: (465)-111-2117',
               },
               {
-                link: 'https://example.com',
+                link: '',
                 label: 'WhatsApp: (449)-312-7372',
               },
               {
-                link: 'https://example.com',
+                link: '',
                 label: 'Email: informes@iinternacional.edu.mx',
               },
             ],

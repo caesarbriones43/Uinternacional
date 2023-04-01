@@ -19,7 +19,6 @@ import {
   rem,
   Image,
 } from '@mantine/core';
-import { MantineLogo } from '@mantine/ds';
 import { useDisclosure } from '@mantine/hooks';
 
 import {
@@ -28,10 +27,9 @@ import {
   IconBook,
   IconChartPie3,
   IconFingerprint,
-  IconCoin,
+  IconSchool,
   IconChevronDown,
 } from '@tabler/icons-react';
-import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import brandLogo from '../../public/brand_logo.svg';
 import brandLogoDark from '../../public/brand_logo_dark.svg';
 
@@ -110,29 +108,29 @@ const useStyles = createStyles((theme) => ({
 
 const mockdata = [
   {
-    icon: IconCode,
-    title: 'Maestria en Competencias Docentes para la Transformacion Digital',
-    description: 'This Pokémon’s cry is very loud and distracting',
+    icon: IconSchool,
+    title: 'Maestra en Competencias Docentes para la Transformación Digital',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Maestr%C3%ADa+en+Competencias+Docentes+para+la+Transformación+Digital.pdf',
   },
   {
-    icon: IconCoin,
-    title: 'Doctorado en Direccion e Innovacion Digital en los Sistemas de Salud',
-    description: 'The fluid of Smeargle’s tail secretions changes',
+    icon: IconSchool,
+    title: 'Doctorado en Dirección e Innovación Digital en los Sistemas de Salud',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Dirección+e+Innovación+Digital+en+los+Sistemas+de+Salud.pdf',
   },
   {
-    icon: IconBook,
-    title: 'Doctorado en Tecnologias de la Transformacion Digital',
-    description: 'Yanma is capable of seeing 360 degrees without',
+    icon: IconSchool,
+    title: 'Doctorado en Tecnologías de la Transformación Digital',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Doctorado+en+Tecnolog%C3%ADas+de+la+Transformación+Digital.pdf',
   },
   {
-    icon: IconFingerprint,
+    icon: IconSchool,
     title: 'Licenciatura en Pedagogia',
-    description: 'The shell’s rounded shape and the grooves on its.',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Licenciatura+en+Pedagog%C3%ADa.pdf',
   },
   {
-    icon: IconChartPie3,
-    title: 'Doctorado en Competencias Docentes para la Transformacion Digital',
-    description: 'This Pokémon uses its flying ability to quickly chase',
+    icon: IconSchool,
+    title: 'Doctorado en Competencias Docentes para la Transformación Digital',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doc-docente.pdf',
   },
 ];
 
@@ -141,18 +139,29 @@ export function MainHeader() {
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const { classes, theme } = useStyles();
 
+  const handleClick = (link: string) => {
+    window.open(
+      link,
+      '_blank' // <- This is what makes it open in a new window.
+    );
+  };
   const links = mockdata.map((item) => (
-    <UnstyledButton className={classes.subLink} key={item.title}>
+    <UnstyledButton
+      className={classes.subLink}
+      key={item.title}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        handleClick(item.link);
+      }}
+    >
       <Group noWrap align="flex-start">
         <ThemeIcon size={34} variant="default" radius="md">
-          <item.icon size={rem(22)} color={theme.fn.primaryColor()} />
+          <item.icon size={rem(22)} color="#a68829" />
         </ThemeIcon>
         <div>
           <Text size="sm" fw={500}>
             {item.title}
-          </Text>
-          <Text size="xs" color="dimmed">
-            {item.description}
           </Text>
         </div>
       </Group>
@@ -170,7 +179,7 @@ export function MainHeader() {
             ></Image>
           </div>
           <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
-            <a href="#" className={classes.link}>
+            <a href="/" className={classes.link}>
               Nosotros
             </a>
             <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
@@ -180,7 +189,7 @@ export function MainHeader() {
                     <Box component="span" mr={5}>
                       Oferta Educativa
                     </Box>
-                    <IconChevronDown size={16} color={theme.fn.primaryColor()} />
+                    <IconChevronDown size={16} color={'#a68829'} />
                   </Center>
                 </a>
               </HoverCard.Target>
@@ -197,14 +206,32 @@ export function MainHeader() {
                 </SimpleGrid>
               </HoverCard.Dropdown>
             </HoverCard>
-            <a href="#" className={classes.link}>
+            <a
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleClick('https://campus.iinternacional.edu.mx/moodle30/');
+              }}
+              className={classes.link}
+            >
               Campus Virtual
             </a>
           </Group>
 
           <Group className={classes.hiddenMobile}>
             <Button className={classes.registerButton} color="#101232">
-              <Text c="#a68829">Inscribete Ahora</Text>
+              <Text
+                c="#a68829"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  handleClick(
+                    'https://docs.google.com/forms/d/1nVwxFYPDjQnEt8lkCZAutkC_sfKXi-NqvdT4VGEKwu0/prefill'
+                  );
+                }}
+              >
+                Inscribete Ahora
+              </Text>
             </Button>
           </Group>
 
@@ -217,14 +244,19 @@ export function MainHeader() {
         onClose={closeDrawer}
         size="100%"
         padding="md"
-        title="U Internacional"
+        title={
+          <Image
+            src={theme.colorScheme === 'dark' ? brandLogoDark.src : brandLogo.src}
+            fit="fill"
+          ></Image>
+        }
         className={classes.hiddenDesktop}
         zIndex={1000000}
       >
         <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
 
-          <a href="#" className={classes.link}>
+          <a href="/" className={classes.link}>
             Nosotros
           </a>
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
@@ -236,7 +268,14 @@ export function MainHeader() {
             </Center>
           </UnstyledButton>
           <Collapse in={linksOpened}>{links}</Collapse>
-          <a href="#" className={classes.link}>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              handleClick('https://campus.iinternacional.edu.mx/moodle30/');
+            }}
+            className={classes.link}
+          >
             Campus Virtual
           </a>
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />

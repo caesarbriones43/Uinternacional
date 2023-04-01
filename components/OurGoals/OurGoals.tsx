@@ -100,10 +100,6 @@ const mockdata = [
 ];
 
 const useStyles = createStyles((theme) => ({
-  card: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-  },
-
   title: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 700,
@@ -112,7 +108,8 @@ const useStyles = createStyles((theme) => ({
   titleMain: {
     fontSize: 24,
     fontWeight: 500,
-    color:'#101232',
+    align: 'justify',
+    color: '#101232',
     [theme.fn.smallerThan('sm')]: {
       fontSize: 18,
     },
@@ -154,7 +151,7 @@ const useStyles = createStyles((theme) => ({
     textAlign: 'center',
     borderRadius: theme.radius.md,
     height: 90,
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+    backgroundColor: 'red',
     transition: 'box-shadow 150ms ease, transform 100ms ease',
 
     '&:hover': {
@@ -167,17 +164,6 @@ const useStyles = createStyles((theme) => ({
 export function OurGoals() {
   const { classes, theme } = useStyles();
 
-  const items = mockdata.map((item) => (
-    <Link href={item.page} key={item.color}>
-      <UnstyledButton key={item.title} className={classes.item}>
-        <item.icon color={theme.colors[item.color][6]} size={32} />
-        <Text size="xs" mt={7}>
-          {item.title}
-        </Text>
-      </UnstyledButton>
-    </Link>
-  ));
-
   return (
     <div className={classes.backgroung}>
       <div className={classes.bg}>
@@ -189,7 +175,7 @@ export function OurGoals() {
             Nuestro Objetivo
           </Badge>
         </Group>
-        <Title order={2} className={classes.titleMain} align="center" mt="sm">
+        <Title order={2} className={classes.titleMain} align="justify" mt="sm" >
           U Internacional ha desarrollado una oferta educativa basada en los retos de la
           transformación digital, Nuestro objetivo es que descubras cómo utilizar los conocimientos
           de una disciplina y la tecnología para que desarrolles todo tu potencial profesional.
@@ -225,7 +211,7 @@ export function OurGoals() {
           ]}
         />
       </Container>
-      <div className={classes.bgW}>
+      <div className={classes.bgW} id="goals">
         <Image src={line.src}></Image>
       </div>
     </div>

@@ -88,25 +88,13 @@ export function Goals({ supTitle, description, data }: FeaturesImagesProps) {
         <Text fw={700} fz="lg" className={classes.itemTitle}>
           {item.title}
         </Text>
-        <Text c="#101232">{item.description}</Text>
+        <Text c="#101232" >{item.description}</Text>
       </div>
     </div>
   ));
 
   return (
     <Container size={700} className={classes.wrapper}>
-      {/* <Text className={classes.supTitle}>{supTitle}</Text>
-  
-        <Title className={classes.title} order={2}>
-          PharmLand is <span className={classes.highlight}>not</span> just for pharmacists
-        </Title>
-  
-        <Container size={660} p={0}>
-          <Text color="dimmed" className={classes.description}>
-            {description}
-          </Text>
-        </Container>
-   */}
       <SimpleGrid
         cols={2}
         spacing={25}
