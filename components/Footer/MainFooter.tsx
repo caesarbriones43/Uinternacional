@@ -191,7 +191,7 @@ export function MainFooter({ data }: MainFooterProps) {
                 stroke={1.5}
                 onClick={() => {
                   handleClick(
-                    'https://api.whatsapp.com/send/?phone=524493127372&text&type=phone_number&app_absent=0'
+                    'https://api.whatsapp.com/send/?phone=524651621164&text&type=phone_number&app_absent=0'
                   );
                 }}
               />

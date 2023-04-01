@@ -88,15 +88,15 @@ function Card({ image, title, category }: CardProps) {
         <Button
           className={classes.registerButton}
           color="#a68829"
-          onClick={(e) => {
+          onClick={(e: any) => {
             e.preventDefault();
             e.stopPropagation();
             handleClick(
-              'https://docs.google.com/forms/d/1nVwxFYPDjQnEt8lkCZAutkC_sfKXi-NqvdT4VGEKwu0/prefill'
+              'https://inscripciones.iinternacional.edu.mx/'
             );
           }}
         >
-          <Text c="#ffffff">Inscribete Ahora</Text>
+          <Text c="#ffffff">Inscríbete Ahora</Text>
         </Button>
       </Flex>
     </BackgroundImage>
@@ -126,13 +126,37 @@ const data = [
     image:
       'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288694/oferta-educativa_0003_Capa_6_vxtt3o.jpg',
     category: 'La Universidad de los profesionales digitales',
-    title: 'Licenciatura en Pedagogia',
+    title: 'Licenciatura en Pedagogía',
   },
   {
     image:
       'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288695/oferta-educativa_0004_Capa_2_jneirn.jpg',
     category: 'La Universidad de los profesionales digitales',
     title: 'Doctorado en Competencias Docentes para la Transformación Digital',
+  },
+  {
+    image:
+      'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Mtria+en+Estadi%CC%81stica.jpg',
+    category: 'La Universidad de los profesionales digitales',
+    title: 'Maestría en Estadística para Ciencias Sociales',
+  },
+  {
+    image:
+      'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Esp.+en+Bioe%CC%81tica.jpg',
+    category: 'La Universidad de los profesionales digitales',
+    title: 'Especialidad en Bioética',
+  },
+  {
+    image:
+      'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Mtria+en+Direccio%CC%81n+e+innovacio%CC%81n+en+los+SS.jpg',
+    category: 'La Universidad de los profesionales digitales',
+    title: 'Maestría en Dirección e Innovación en los Sistemas de Salud',
+  },
+  {
+    image:
+      'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Doc.+en+Derecho.jpg',
+    category: 'La Universidad de los profesionales digitales',
+    title: 'Doctorado en Derecho',
   },
 ];
 

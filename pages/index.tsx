@@ -4,6 +4,8 @@ import { Slider } from '../components/Slider/Slider';
 import { OurGoals } from '../components/OurGoals/OurGoals';
 import { EducativeOfferCard } from '../components/EducativeOffer/EducativeOfferCard';
 import { Us } from '../components/Us/Us';
+import { FloatingScreen } from '../components/Fabs/FloatingScreen';
+import { FloatingWhatsapp } from '../components/Fabs/FloatingWhatsapp';
 
 export default function HomePage() {
   return (
@@ -13,6 +15,8 @@ export default function HomePage() {
       <OurGoals />
       <Us />
       <EducativeOfferCard />
+      <FloatingWhatsapp></FloatingWhatsapp>
+      <FloatingScreen />
       <MainFooter
         data={[
           {

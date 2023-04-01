@@ -46,6 +46,7 @@ const useStyles = createStyles((theme) => ({
     color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     fontWeight: 500,
     fontSize: theme.fontSizes.sm,
+    cursor: 'pointer',
 
     [theme.fn.smallerThan('sm')]: {
       height: rem(42),
@@ -111,8 +112,28 @@ const useStyles = createStyles((theme) => ({
 const mockdata = [
   {
     icon: IconSchool,
-    title: 'Maestra en Competencias Docentes para la Transformación Digital',
+    title: 'Licenciatura en Pedagogía',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Licenciatura+en+Pedagog%C3%ADa.pdf',
+  },
+  {
+    icon: IconSchool,
+    title: 'Maestría en Competencias Docentes para la Transformación Digital',
     link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Maestr%C3%ADa+en+Competencias+Docentes+para+la+Transformación+Digital.pdf',
+  },
+  {
+    icon: IconSchool,
+    title: 'Maestría en Estadística para Ciencias Sociales',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/maestria+ciencias+sociales-1.pdf',
+  },
+  {
+    icon: IconSchool,
+    title: 'Maestría en Dirección e Innovación en los Sistemas de Salud',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/maestria-sistemas+de+salud-1.pdf',
+  },
+  {
+    icon: IconSchool,
+    title: 'Doctorado en Derecho',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doctorado+derecho-1.pdf',
   },
   {
     icon: IconSchool,
@@ -126,13 +147,13 @@ const mockdata = [
   },
   {
     icon: IconSchool,
-    title: 'Licenciatura en Pedagogia',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Licenciatura+en+Pedagog%C3%ADa.pdf',
+    title: 'Doctorado en Competencias Docentes para la Transformación Digital',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doc-docente.pdf',
   },
   {
     icon: IconSchool,
-    title: 'Doctorado en Competencias Docentes para la Transformación Digital',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doc-docente.pdf',
+    title: 'Especialidad en Bioética',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/especialidad+bioetica-1.pdf',
   },
 ];
 
@@ -154,7 +175,7 @@ export function MainHeader() {
     <UnstyledButton
       className={classes.subLink}
       key={item.title}
-      onClick={(e) => {
+      onClick={(e: any) => {
         e.preventDefault();
         e.stopPropagation();
         handleClick(item.link);
@@ -215,7 +236,7 @@ export function MainHeader() {
                     </HoverCard.Dropdown>
                   </HoverCard>
                   <a
-                    onClick={(e) => {
+                    onClick={(e: any) => {
                       e.preventDefault();
                       e.stopPropagation();
                       handleClick('https://campus.iinternacional.edu.mx/moodle30/');
@@ -230,11 +251,11 @@ export function MainHeader() {
                   <Button className={classes.registerButton} color="#101232">
                     <Text
                       c="#a68829"
-                      onClick={(e) => {
+                      onClick={(e: any) => {
                         e.preventDefault();
                         e.stopPropagation();
                         handleClick(
-                          'https://docs.google.com/forms/d/1nVwxFYPDjQnEt8lkCZAutkC_sfKXi-NqvdT4VGEKwu0/prefill'
+                          'https://inscripciones.iinternacional.edu.mx/'
                         );
                       }}
                     >
@@ -281,7 +302,7 @@ export function MainHeader() {
                 </UnstyledButton>
                 <Collapse in={linksOpened}>{links}</Collapse>
                 <a
-                  onClick={(e) => {
+                  onClick={(e: any) => {
                     e.preventDefault();
                     e.stopPropagation();
                     handleClick('https://campus.iinternacional.edu.mx/moodle30/');

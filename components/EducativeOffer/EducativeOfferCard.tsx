@@ -20,10 +20,31 @@ import line from './line.svg';
 const mockdata = [
   {
     image:
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288694/oferta-educativa_0003_Capa_6_vxtt3o.jpg',
+    date: 'RVOE: 20211668',
+    title: 'Licenciatura en Pedagogía',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Licenciatura+en+Pedagog%C3%ADa.pdf',
+  },
+  {
+    image:
+      'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Mtria+en+Estadi%CC%81stica.jpg',
+    date: 'RVOE: 20221587',
+    title: 'Maestría en Estadística para Ciencias Sociales',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/maestria+ciencias+sociales-1.pdf',
+  },
+  {
+    image:
       'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288690/oferta-educativa_0001_Capa_4_hbtolw.jpg',
     date: 'RVOE: 20211667',
     title: 'Maestría en Competencias Docentes para la Transformación Digital',
     link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Maestr%C3%ADa+en+Competencias+Docentes+para+la+Transformación+Digital.pdf',
+  },
+  {
+    image:
+      'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Mtria+en+Direccio%CC%81n+e+innovacio%CC%81n+en+los+SS.jpg',
+    date: 'RVOE: 20221693',
+    title: 'Maestría en Dirección e Innovación en los Sistemas de Salud',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/maestria-sistemas+de+salud-1.pdf',
   },
   {
     image:
@@ -34,24 +55,31 @@ const mockdata = [
   },
   {
     image:
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288695/oferta-educativa_0004_Capa_2_jneirn.jpg',
+    date: 'RVOE: 20211666',
+    title: 'Doctorado en Competencias Docentes para la Transformación Digital',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doc-docente.pdf',
+  },
+  {
+    image:
       'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288689/oferta-educativa_0000_Capa_5_vs6cj9.jpg',
     date: 'RVOE: 20211665',
-    title: 'Doctorado en Tecnologías de la  Digital',
+    title: 'Doctorado en Tecnologías de la Transformación Digital',
     link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Doctorado+en+Tecnolog%C3%ADas+de+la+Transformación+Digital.pdf',
   },
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288694/oferta-educativa_0003_Capa_6_vxtt3o.jpg',
-    date: 'RVOE: 20211668',
-    title: 'Licenciatura en Pedagogia',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Licenciatura+en+Pedagog%C3%ADa.pdf',
+      'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Doc.+en+Derecho.jpg',
+    date: 'RVOE: 20221694',
+    title: 'Doctorado en Derecho',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doctorado+derecho-1.pdf',
   },
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288695/oferta-educativa_0004_Capa_2_jneirn.jpg',
-    date: 'RVOE: 20211666',
-    title: 'Doctorado en Competencias Docentes para la  Digital',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doc-docente.pdf',
+      'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Esp.+en+Bioe%CC%81tica.jpg',
+    date: 'RVOE: 20221692',
+    title: 'Especialidad en Bioética',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/especialidad+bioetica-1.pdf',
   },
 ];
 
@@ -139,7 +167,7 @@ export function EducativeOfferCard() {
         <Button
           fullWidth
           className={classes.informationButton}
-          onClick={(e) => {
+          onClick={(e:any) => {
             e.preventDefault();
             e.stopPropagation();
             handleClick(article.link);
