@@ -9,8 +9,8 @@ import {
   Container,
   Group,
   Badge,
+  Center,
 } from '@mantine/core';
-import image from './image.svg';
 import { Values } from './Values';
 
 const useStyles = createStyles((theme) => ({
@@ -26,7 +26,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   image: {
-    maxWidth: '40%',
+    maxWidth: '60%',
     [theme.fn.smallerThan('sm')]: {
       maxWidth: '100%',
     },
@@ -74,32 +74,40 @@ export function Us() {
   const { classes } = useStyles();
   return (
     <>
-      <Container>
-        <div className={classes.wrapper}>
-          <div className={classes.body}>
-            <Group position="center">
-              <Badge size="xl" c="#ffffff" bg={'#101232'} id="us">
-                Nosotros
-              </Badge>
-            </Group>
-            <Title className={classes.title}>Misión</Title>
-            <Text fw={500} fz="lg" mb={5}>
-              Enriquecemos el talento humano con las competencias necesarias para desarrollarse
-              profesionalmente en un entorno de transformación digital
-            </Text>
-            <Title className={classes.title} mt={50}>
-              Visión
-            </Title>
-            <Text fw={500} fz="lg" mb={5}>
-              Ser la universidad preferida de los estudiantes y empleadores, destacándose por su
-              excelencia académica, investigación de vanguardia y una sólida formación en liderazgo
-              y servicio.
-            </Text>
+      <div style={{ backgroundColor: '#D6D4D4' }}>
+        <Container pt={75}>
+          <Center>
+            <Title className={classes.title}>Nosotros</Title>
+          </Center>
+          <div className={classes.wrapper} style={{ backgroundColor: '#D6D4D4' }}>
+            <div className={classes.body}>
+              <Group position="center"></Group>
+              <Title className={classes.title} align="center">
+                Misión
+              </Title>
+              <Text fw={500} fz="lg" mb={5} align="justify">
+                Enriquecemos el talento humano con las competencias necesarias para desarrollarse
+                profesionalmente en un entorno de transformación digital
+              </Text>
+              <Title className={classes.title} mt={50} align="center">
+                Visión
+              </Title>
+              <Text fw={500} fz="lg" mb={5} align="justify">
+                Ser la universidad preferida de los estudiantes y empleadores, destacándose por su
+                excelencia académica, investigación de vanguardia y una sólida formación en
+                liderazgo y servicio.
+              </Text>
+            </div>
+            <Image
+              src={
+                'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640289693/nosotros_ntqn5b.jpg'
+              }
+              className={classes.image}
+            />
           </div>
-          <Image src={image.src} className={classes.image} />
-        </div>
-      </Container>
-      <Values />
+        </Container>
+        <Values  />
+      </div>
     </>
   );
 }

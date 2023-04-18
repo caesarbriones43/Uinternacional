@@ -14,6 +14,7 @@ import {
   Box,
   Flex,
 } from '@mantine/core';
+import capa1 from "../../public/images/capa_1.jpg";
 
 import { useViewportSize } from '@mantine/hooks';
 
@@ -68,7 +69,7 @@ function Card({ image, title, category }: CardProps) {
   };
 
   return (
-    <BackgroundImage src={image} radius="sm" w={width} h={height}>
+    <BackgroundImage src={image} radius="sm" >
       <Flex
         p={40}
         h={height}
@@ -78,27 +79,7 @@ function Card({ image, title, category }: CardProps) {
         align="center"
         direction="column"
         wrap="wrap"
-      >
-        <Title order={3} className={classes.title}>
-          {title}
-        </Title>
-        <Text className={classes.category} size="xs">
-          {category}
-        </Text>
-        <Button
-          className={classes.registerButton}
-          color="#a68829"
-          onClick={(e: any) => {
-            e.preventDefault();
-            e.stopPropagation();
-            handleClick(
-              'https://inscripciones.iinternacional.edu.mx/'
-            );
-          }}
-        >
-          <Text c="#ffffff">Inscríbete Ahora</Text>
-        </Button>
-      </Flex>
+      ></Flex>
     </BackgroundImage>
   );
 }
@@ -177,6 +158,7 @@ export function Slider() {
       align="start"
       withIndicators
       loop
+      height="100%"
       //   slidesToScroll={mobile ? 1 : 2}
     >
       {slides}

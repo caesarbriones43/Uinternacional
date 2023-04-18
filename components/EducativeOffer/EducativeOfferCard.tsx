@@ -12,8 +12,12 @@ import {
   Paper,
   Button,
   Flex,
+  Space,
+  rem,
+  Center,
 } from '@mantine/core';
 import Link from 'next/link';
+import wave from './wave.svg';
 
 import line from './line.svg';
 
@@ -112,9 +116,26 @@ const useStyles = createStyles((theme) => ({
   title: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 600,
+    color: '#a68829',
+    fontSize: 42,
+    
+  },
+  titleCard: {
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontWeight: 400,
+    color: '#a68829',
+    fontSize: 18,
   },
   bg: {
     backgroundColor: '#101232',
+  },
+  section: {
+    borderBottom: `${rem(1)} solid ${
+      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
+    }`,
+    paddingLeft: theme.spacing.md,
+    paddingRight: theme.spacing.md,
+    paddingBottom: theme.spacing.md,
   },
   titleMain: {
     fontSize: 24,
@@ -125,8 +146,26 @@ const useStyles = createStyles((theme) => ({
     color: '#ffffff',
   },
 
+  boxBtn: {
+    height: 125,
+    // backgroundColor: 'red',
+    display: 'flex',
+    justifyContent: 'center',
+
+    [theme.fn.smallerThan('sm')]: {
+      height: 75,
+    },
+  },
+
   bgW: {
     backgroundColor: '#ffffff',
+  },
+  divParent: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  spanChild: {
+    margin: 'auto',
   },
 }));
 
@@ -134,40 +173,34 @@ export function EducativeOfferCard() {
   const { classes } = useStyles();
 
   const cards = mockdata.map((article) => (
-    <Paper key={article.title} p="md" radius="md" component="a" href="#" className={classes.card} id="offert">
+    <Card
+      key={article.title}
+      p="md"
+      radius="md"
+      component="a"
+      href="#"
+      className={classes.card}
+      id="offert"
+    >
       <AspectRatio ratio={1920 / 1080}>
         <Image src={article.image} />
       </AspectRatio>
-      <Text color="dimmed" size="xs" transform="uppercase" weight={700} mt="md" c={'#a68829'}>
-        {article.date}
-      </Text>
-      <Text className={classes.title} mt={5} c={'#ffffff'}>
-        {article.title}
-      </Text>
-      <Flex
-        mih={10}
-        mt={10}
-        justify="center"
-        align="center"
-        direction="row"
-        wrap="wrap"
-        className={classes.wrapper}
-      >
-        {/* <a
-          target="_blank"
-          href={article.link}
-          rel="noopener noreferrer"
-          style={{
-            textDecoration: 'inherit',
-            color: 'inherit',
-            cursor: 'auto',
-          }}
-        > */}
-        {/* <Link href="https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Doctorado+en+Tecnolog%C3%ADas+de+la+Transformaci%C3%B3n+Digital.pdf"> */}
+      <Group position="left">
+        <Text color="dimmed" size="xs" transform="uppercase" weight={700} mt="md" c={'#a68829'}>
+          {article.date}
+        </Text>
+      </Group>
+      <Group p={5} className={classes.boxBtn}>
+        <Text className={classes.titleCard} mt={5} c={'#ffffff'} align="center">
+          {article.title}
+        </Text>
+      </Group>
+
+      <Group>
         <Button
           fullWidth
           className={classes.informationButton}
-          onClick={(e:any) => {
+          onClick={(e: any) => {
             e.preventDefault();
             e.stopPropagation();
             handleClick(article.link);
@@ -175,33 +208,33 @@ export function EducativeOfferCard() {
         >
           <Text c="#ffffff">Conocer más</Text>
         </Button>
-        {/* </a> */}
-        {/* </Link> */}
-      </Flex>
-    </Paper>
+      </Group>
+    </Card>
   ));
 
   return (
     <div className={classes.bg}>
       <div className={classes.bgW}>
-        <Image src={line.src}></Image>
+        <Image src={line.src} bg="#D6D4D4"></Image>
       </div>
-      <Container py="xl">
+      <div style={{ paddingLeft: 40, paddingRight: 40 }}>
         <Group position="center" p="xl">
-          <Badge size="xl" c="#ffffff" bg={'#a68829'}>
-            Oferta Educativa
-          </Badge>
-          <Title order={2} className={classes.titleMain} align="justify" mt="sm">
+          <Title className={classes.title} align="center">
+            Nuestros Valores
+          </Title>
+          <Title order={2} className={classes.titleMain} align="justify" mt="xl">
             En nuestra institución educativa, ofrecemos programas diseñados para preparar a nuestros
             estudiantes para una carrera exitosa y satisfactoria en una amplia variedad de campos
             profesionales.
           </Title>
         </Group>
-
-        <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]} >
+        <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
           {cards}
         </SimpleGrid>
-      </Container>
+      </div>
+      <div className={classes.bg}>
+        <Image src={wave.src}></Image>
+      </div>
     </div>
   );
 }

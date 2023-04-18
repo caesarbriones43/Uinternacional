@@ -6,17 +6,21 @@ import { EducativeOfferCard } from '../components/EducativeOffer/EducativeOfferC
 import { Us } from '../components/Us/Us';
 import { FloatingScreen } from '../components/Fabs/FloatingScreen';
 import { FloatingWhatsapp } from '../components/Fabs/FloatingWhatsapp';
+import { OurObjective } from '../components/OurObjective/OurObjective';
+import Suscribe from '../components/Suscribe/Suscribe';
 
 export default function HomePage() {
   return (
     <>
       <MainHeader />
       <Slider />
-      <OurGoals />
+      {/* <OurGoals /> */}
+      <OurObjective></OurObjective>
       <Us />
       <EducativeOfferCard />
       <FloatingWhatsapp></FloatingWhatsapp>
       <FloatingScreen />
+      <Suscribe></Suscribe>
       <MainFooter
         data={[
           {
@@ -54,7 +58,7 @@ export default function HomePage() {
               },
               {
                 link: '',
-                label: 'WhatsApp: (449)-312-7372',
+                label: 'WhatsApp: (465)-162-1164',
               },
               {
                 link: '',

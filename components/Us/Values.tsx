@@ -1,21 +1,25 @@
-import { createStyles, Text, SimpleGrid, Container, rem, Group, Badge, Image } from '@mantine/core';
+import {
+  createStyles,
+  Text,
+  SimpleGrid,
+  Container,
+  rem,
+  Group,
+  Badge,
+  Image,
+  Title,
+  Center,
+  Flex,
+} from '@mantine/core';
 import { IconTruck, IconCertificate, IconCoin } from '@tabler/icons-react';
 
 const useStyles = createStyles((theme) => ({
   feature: {
-    position: 'relative',
-    paddingTop: theme.spacing.xl,
-    paddingLeft: theme.spacing.xl,
-  },
-
-  overlay: {
-    position: 'absolute',
-    height: rem(150),
-    width: rem(160),
-    top: 0,
-    left: 0,
-    backgroundColor: '#101232',
-    zIndex: 1,
+    // position: 'relative',
+    // paddingTop: theme.spacing.xl,
+    // paddingLeft: theme.spacing.xl,
+    // backgroundColor: 'blue',
+    backgroundColor: '#D6D4D4',
   },
 
   content: {
@@ -30,6 +34,9 @@ const useStyles = createStyles((theme) => ({
   title: {
     color: '#a68829',
   },
+  subtitle: {
+    color: 'black',
+  },
 }));
 
 interface FeatureProps extends React.ComponentPropsWithoutRef<'div'> {
@@ -39,25 +46,27 @@ interface FeatureProps extends React.ComponentPropsWithoutRef<'div'> {
   url: string;
 }
 
-
 function Feature({ icon: Icon, title, description, url, className, ...others }: FeatureProps) {
   const { classes, cx } = useStyles();
 
   return (
     <div className={cx(classes.feature, className)} {...others}>
-      <div className={classes.overlay} />
-
-      <div className={classes.content}>
-        {/* <Image src={logoPersistencia.src} width={100} height={125}></Image> */}
-        <Image src={url}  width={110} height={120}></Image>
-        {/* <Icon size={rem(38)} className={classes.icon} stroke={1.5} /> */}
-        <Text fw={700} fz="lg" mb="xs" mt={5} className={classes.title}>
+      {/* <div className={classes.content}> */}
+      <Flex
+        justify="center"
+        align="center"
+        direction="column"
+        wrap="wrap"
+        style={{ backgroundColor: '#D6D4D4' }}
+      >
+        <Image src={url} width={100} height={100}></Image>
+        <Text fw={700} fz="lg" mb="xs" mt={5} className={classes.subtitle}>
           {title}
+          
         </Text>
-        <Text c="dimmed" fz="sm">
-          {description}
-        </Text>
-      </div>
+      </Flex>
+
+      {/* </div> */}
     </div>
   );
 }
@@ -95,15 +104,16 @@ const mockdata = [
 
 export function Values() {
   const items = mockdata.map((item) => <Feature {...item} key={item.title} />);
+  const { classes } = useStyles();
 
   return (
-    <Container mt={30} size="xl" bg="#ffffff">
+    <Container mt={30} size="xl" bg="#D6D4D4">
       <Group position="center" mb={30}>
-        <Badge size="xl" c="#ffffff" bg={'#101232'} >
+        <Title className={classes.title} align="center">
           Nuestros Valores
-        </Badge>
+        </Title>
       </Group>
-      <SimpleGrid cols={4} breakpoints={[{ maxWidth: 'sm', cols: 1 }]} spacing={50} >
+      <SimpleGrid cols={4} breakpoints={[{ maxWidth: 'sm', cols: 3 }]} bg="#D6D4D4">
         {items}
       </SimpleGrid>
     </Container>

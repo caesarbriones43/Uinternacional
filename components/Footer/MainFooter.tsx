@@ -159,9 +159,9 @@ export function MainFooter({ data }: MainFooterProps) {
 
   return (
     <>
-      <div className={classes.bg}>
+      {/* <div className={classes.bg}>
         <Image src={wave.src}></Image>
-      </div>
+      </div> */}
 
       <footer className={classes.footer}>
         <Container className={classes.inner}>
