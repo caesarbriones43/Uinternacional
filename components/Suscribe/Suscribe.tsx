@@ -36,12 +36,15 @@ const useStyles = createStyles((theme) => ({
 
   title: {
     color: '#a68829',
-    fontSize: 82,
+    fontSize:68,
     letterSpacing: 7,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     lineHeight: 1,
     marginBottom: theme.spacing.md,
+    [theme.fn.smallerThan('sm')]: {
+      fontSize:52,
   },
+},
   subtitle: {
     color: 'black',
   },

@@ -153,6 +153,7 @@ export function Slider() {
       withIndicators
       loop
       height="100%"
+      pt={60}
       //   slidesToScroll={mobile ? 1 : 2}
     >
       {slides}
