@@ -174,11 +174,11 @@ export function EducativeOfferCard() {
 
   const cards = mockdata.map((article) => (
     <Card
-      key={article.title}
+      // key={article.title}
       p="md"
       radius="md"
       component="a"
-      href="#"
+
       className={classes.card}
       id="offert"
     >
