@@ -25,63 +25,72 @@ const mockdata = [
   {
     image:
       'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288694/oferta-educativa_0003_Capa_6_vxtt3o.jpg',
-    date: 'RVOE: 20211668',
+    date: 'RVOE SEP: 20211668',
+    rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Licenciatura en Pedagogía',
     link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Licenciatura+en+Pedagog%C3%ADa.pdf',
   },
   {
     image:
       'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Mtria+en+Estadi%CC%81stica.jpg',
-    date: 'RVOE: 20221587',
+    date: 'RVOE SEP: 20221587',
     title: 'Maestría en Estadística para Ciencias Sociales',
+    rvoes: 'RVOE SEP SEP: 20211668',
     link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/maestria+ciencias+sociales-1.pdf',
   },
   {
     image:
       'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288690/oferta-educativa_0001_Capa_4_hbtolw.jpg',
-    date: 'RVOE: 20211667',
+    date: 'RVOE SEP: 20211667',
+    rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Maestría en Competencias Docentes para la Transformación Digital',
     link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Maestr%C3%ADa+en+Competencias+Docentes+para+la+Transformación+Digital.pdf',
   },
   {
     image:
       'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Mtria+en+Direccio%CC%81n+e+innovacio%CC%81n+en+los+SS.jpg',
-    date: 'RVOE: 20221693',
+    date: 'RVOE SEP: 20221693',
+    rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Maestría en Dirección e Innovación en los Sistemas de Salud',
     link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/maestria-sistemas+de+salud-1.pdf',
   },
   {
     image:
       'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288692/oferta-educativa_0002_Capa_3_bovhht.jpg',
-    date: 'RVOE: 20211669',
+    date: 'RVOE SEP: 20211669',
+    rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Doctorado en Dirección e Innovación Digital en los Sistemas de Salud',
     link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Dirección+e+Innovación+Digital+en+los+Sistemas+de+Salud.pdf',
   },
   {
     image:
       'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288695/oferta-educativa_0004_Capa_2_jneirn.jpg',
-    date: 'RVOE: 20211666',
+    date: 'RVOE SEP: 20211666',
+    rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Doctorado en Competencias Docentes para la Transformación Digital',
     link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doc-docente.pdf',
   },
   {
     image:
       'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288689/oferta-educativa_0000_Capa_5_vs6cj9.jpg',
-    date: 'RVOE: 20211665',
+    date: 'RVOE SEP: 20211665',
+    rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Doctorado en Tecnologías de la Transformación Digital',
     link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Doctorado+en+Tecnolog%C3%ADas+de+la+Transformación+Digital.pdf',
   },
   {
     image:
       'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Doc.+en+Derecho.jpg',
-    date: 'RVOE: 20221694',
+    date: 'RVOE SEP: 20221694',
+    rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Doctorado en Derecho',
     link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doctorado+derecho-1.pdf',
   },
   {
     image:
       'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Esp.+en+Bioe%CC%81tica.jpg',
-    date: 'RVOE: 20221692',
+    date: 'RVOE SEP: 20221692',
+    rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Especialidad en Bioética',
     link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/especialidad+bioetica-1.pdf',
   },
@@ -118,13 +127,16 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 600,
     color: '#a68829',
     fontSize: 42,
-    
   },
   titleCard: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 400,
     color: '#a68829',
     fontSize: 18,
+
+    [theme.fn.smallerThan('sm')]: {
+      fontSize: 12,
+    },
   },
   bg: {
     backgroundColor: '#101232',
@@ -153,7 +165,7 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'center',
 
     [theme.fn.smallerThan('sm')]: {
-      height: 75,
+      height: 100,
     },
   },
 
@@ -178,7 +190,6 @@ export function EducativeOfferCard() {
       p="md"
       radius="md"
       component="a"
-
       className={classes.card}
       id="offert"
     >
@@ -214,18 +225,15 @@ export function EducativeOfferCard() {
 
   return (
     <div className={classes.bg}>
-      <div className={classes.bgW}>
-        <Image src={line.src} bg="#D6D4D4"></Image>
-      </div>
+      <div className={classes.bgW}>{/* <Image src={line.src} bg="#D6D4D4"></Image> */}</div>
       <div style={{ paddingLeft: 40, paddingRight: 40 }}>
         <Group position="center" p="xl">
-          <Title className={classes.title} align="center">
-            Nuestros Valores
-          </Title>
-          <Title order={2} className={classes.titleMain} align="justify" mt="xl">
-            En nuestra institución educativa, ofrecemos programas diseñados para preparar a nuestros
-            estudiantes para una carrera exitosa y satisfactoria en una amplia variedad de campos
-            profesionales.
+          <Title
+            className={classes.title}
+            align="center"
+            style={{ paddingTop: 50, paddingBottom: 50 }}
+          >
+            Oferta Educativa
           </Title>
         </Group>
         <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>

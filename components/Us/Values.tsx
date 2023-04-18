@@ -20,6 +20,7 @@ const useStyles = createStyles((theme) => ({
     // paddingLeft: theme.spacing.xl,
     // backgroundColor: 'blue',
     backgroundColor: '#D6D4D4',
+    paddingBottom: 50,
   },
 
   content: {
@@ -62,7 +63,6 @@ function Feature({ icon: Icon, title, description, url, className, ...others }: 
         <Image src={url} width={100} height={100}></Image>
         <Text fw={700} fz="lg" mb="xs" mt={5} className={classes.subtitle}>
           {title}
-          
         </Text>
       </Flex>
 
@@ -107,15 +107,17 @@ export function Values() {
   const { classes } = useStyles();
 
   return (
-    <Container mt={30} size="xl" bg="#D6D4D4">
+    <Container mt={75} size="xl" bg="#D6D4D4">
       <Group position="center" mb={30}>
         <Title className={classes.title} align="center">
           Nuestros Valores
         </Title>
       </Group>
-      <SimpleGrid cols={4} breakpoints={[{ maxWidth: 'sm', cols: 3 }]} bg="#D6D4D4">
-        {items}
-      </SimpleGrid>
+      <div>
+        <SimpleGrid cols={4} breakpoints={[{ maxWidth: 'sm', cols: 3 }]} bg="#D6D4D4">
+          {items}
+        </SimpleGrid>
+      </div>
     </Container>
   );
 }

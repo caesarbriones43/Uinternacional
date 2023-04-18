@@ -26,7 +26,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   image: {
-    maxWidth: '60%',
+    minWidth: '40%',
     [theme.fn.smallerThan('sm')]: {
       maxWidth: '100%',
     },
@@ -74,9 +74,9 @@ export function Us() {
   const { classes } = useStyles();
   return (
     <>
-      <div style={{ backgroundColor: '#D6D4D4' }}>
-        <Container pt={75}>
-          <Center>
+      <div style={{ backgroundColor: '#D6D4D4'}}>
+        <div style={{ padding: 50 }}>
+          <Center pb={50}>
             <Title className={classes.title}>Nosotros</Title>
           </Center>
           <div className={classes.wrapper} style={{ backgroundColor: '#D6D4D4' }}>
@@ -89,14 +89,16 @@ export function Us() {
                 Enriquecemos el talento humano con las competencias necesarias para desarrollarse
                 profesionalmente en un entorno de transformación digital
               </Text>
-              <Title className={classes.title} mt={50} align="center">
-                Visión
-              </Title>
-              <Text fw={500} fz="lg" mb={5} align="justify">
-                Ser la universidad preferida de los estudiantes y empleadores, destacándose por su
-                excelencia académica, investigación de vanguardia y una sólida formación en
-                liderazgo y servicio.
-              </Text>
+              <div style={{ marginTop: 100 }}>
+                <Title className={classes.title} mt={50} align="center">
+                  Visión
+                </Title>
+                <Text fw={500} fz="lg" mb={5} align="justify">
+                  Ser la universidad preferida de los estudiantes y empleadores, destacándose por su
+                  excelencia académica, investigación de vanguardia y una sólida formación en
+                  liderazgo y servicio.
+                </Text>
+              </div>
             </div>
             <Image
               src={
@@ -105,8 +107,8 @@ export function Us() {
               className={classes.image}
             />
           </div>
-        </Container>
-        <Values  />
+        </div>
+        <Values />
       </div>
     </>
   );

@@ -16,7 +16,8 @@ export default function HomePage() {
       <Slider />
       {/* <OurGoals /> */}
       <OurObjective></OurObjective>
-      <Us />
+      <Us></Us>
+
       <EducativeOfferCard />
       <FloatingWhatsapp></FloatingWhatsapp>
       <FloatingScreen />
