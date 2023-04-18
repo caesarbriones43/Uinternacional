@@ -1,6 +1,5 @@
 import { MainHeader } from '../components/Header/MainHeader';
 import { MainFooter } from '../components/Footer/MainFooter';
-import { Slider } from '../components/Slider/Slider';
 import { OurGoals } from '../components/OurGoals/OurGoals';
 import { EducativeOfferCard } from '../components/EducativeOffer/EducativeOfferCard';
 import { Us } from '../components/Us/Us';
@@ -8,6 +7,7 @@ import { FloatingScreen } from '../components/Fabs/FloatingScreen';
 import { FloatingWhatsapp } from '../components/Fabs/FloatingWhatsapp';
 import { OurObjective } from '../components/OurObjective/OurObjective';
 import Suscribe from '../components/Suscribe/Suscribe';
+import { Slider } from '../components/Slider/Slider';
 
 export default function HomePage() {
   return (

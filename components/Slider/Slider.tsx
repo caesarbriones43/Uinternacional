@@ -14,7 +14,7 @@ import {
   Box,
   Flex,
 } from '@mantine/core';
-import capa1 from "../../public/images/capa_1.jpg";
+import capa1 from '../../public/images/capa_1.jpg';
 
 import { useViewportSize } from '@mantine/hooks';
 
@@ -69,7 +69,7 @@ function Card({ image, title, category }: CardProps) {
   };
 
   return (
-    <BackgroundImage src={image} radius="sm" >
+    <BackgroundImage src={image} radius="sm">
       <Flex
         p={40}
         h={height}
@@ -87,57 +87,51 @@ function Card({ image, title, category }: CardProps) {
 const data = [
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288690/oferta-educativa_0001_Capa_4_hbtolw.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1681834368/pedagogia_0011_Capa_0_hij6i9.jpg',
     title: 'Maestría en Competencias Docentes para la Transformación Digital',
     category: 'La Universidad de los profesionales digitales',
   },
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288692/oferta-educativa_0002_Capa_3_bovhht.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1681834367/Mtria_en_Estadi%CC%81stica_cu1vog.jpg',
     category: 'La Universidad de los profesionales digitales',
     title: 'Doctorado en Dirección e Innovación Digital en los Sistemas de Salud',
   },
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288689/oferta-educativa_0000_Capa_5_vs6cj9.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1681834367/Mtria_en_Direccio%CC%81n_e_innovacio%CC%81n_en_los_SS_azrial.jpg',
     category: 'La Universidad de los profesionales digitales',
     title: 'Doctorado en Tecnologías de la Transformación Digital',
   },
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288694/oferta-educativa_0003_Capa_6_vxtt3o.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1681834367/pedagogia_0002_Capa_9_tlnrpr.jpg',
     category: 'La Universidad de los profesionales digitales',
     title: 'Licenciatura en Pedagogía',
   },
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288695/oferta-educativa_0004_Capa_2_jneirn.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1681834362/Doc._en_Derecho_t64one.jpg',
     category: 'La Universidad de los profesionales digitales',
     title: 'Doctorado en Competencias Docentes para la Transformación Digital',
   },
   {
     image:
-      'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Mtria+en+Estadi%CC%81stica.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1681834361/pedagogia_0003_Capa_8_alh9k8.jpg',
     category: 'La Universidad de los profesionales digitales',
     title: 'Maestría en Estadística para Ciencias Sociales',
   },
   {
     image:
-      'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Esp.+en+Bioe%CC%81tica.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1681834361/pedagogia_0000_Capa_11_bsdhwx.jpg',
     category: 'La Universidad de los profesionales digitales',
     title: 'Especialidad en Bioética',
   },
   {
     image:
-      'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Mtria+en+Direccio%CC%81n+e+innovacio%CC%81n+en+los+SS.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1681834360/pedagogia_0001_Capa_10_mv3eim.jpg',
     category: 'La Universidad de los profesionales digitales',
     title: 'Maestría en Dirección e Innovación en los Sistemas de Salud',
-  },
-  {
-    image:
-      'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/covers/Doc.+en+Derecho.jpg',
-    category: 'La Universidad de los profesionales digitales',
-    title: 'Doctorado en Derecho',
   },
 ];
 
