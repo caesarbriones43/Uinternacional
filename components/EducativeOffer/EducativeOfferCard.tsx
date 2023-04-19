@@ -236,13 +236,13 @@ export function EducativeOfferCard() {
             Oferta Educativa
           </Title>
         </Group>
-        <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+        <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]} pb={100}>
           {cards}
         </SimpleGrid>
       </div>
-      <div className={classes.bg}>
+      {/* <div className={classes.bg}>
         <Image src={wave.src}></Image>
-      </div>
+      </div> */}
     </div>
   );
 }
