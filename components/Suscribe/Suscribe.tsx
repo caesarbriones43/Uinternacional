@@ -26,6 +26,7 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
+
   icon: {
     color: '#a68829',
   },
@@ -58,7 +59,7 @@ export default function Suscribe() {
   };
 
   return (
-    <BackgroundImage src={image.src} w={width}  h={height}>
+    <BackgroundImage src={image.src} w={'100%'}  h={height}>
       <Flex
         h={'100%'}
         bg="rgba(0, 0, 0, .3)"
