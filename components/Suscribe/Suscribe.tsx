@@ -6,6 +6,7 @@ import {
   Flex,
   createStyles,
   UnstyledButton,
+  rem,
 } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 import image from './inscribete.jpg';
@@ -23,11 +24,6 @@ const useStyles = createStyles((theme) => ({
       transform: 'scale(1.02)',
       boxShadow: theme.shadows.md,
     },
-  },
-
-  content: {
-    position: 'relative',
-    zIndex: 2,
   },
 
   icon: {
@@ -62,16 +58,15 @@ export default function Suscribe() {
   };
 
   return (
-    <BackgroundImage src={image.src} radius="sm" w={width} mx="auto" h={height}>
+    <BackgroundImage src={image.src} w={width}  h={height}>
       <Flex
         h={'100%'}
         bg="rgba(0, 0, 0, .3)"
-        gap="xs"
         justify="center"
         align="center"
         direction="column"
       >
-        <Text className={classes.title}>¡Inscribete!</Text>
+        <Text className={classes.title}>¡Inscríbete!</Text>
         <UnstyledButton
           className={classes.btn}
           style={{ backgroundColor: '#a68829', height: 50, width: 200, borderRadius: 20 }}

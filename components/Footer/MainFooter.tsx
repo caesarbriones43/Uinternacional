@@ -1,4 +1,14 @@
-import { createStyles, Text, Container, ActionIcon, Group, rem, Image, Flex } from '@mantine/core';
+import {
+  createStyles,
+  Text,
+  Container,
+  ActionIcon,
+  Group,
+  rem,
+  Image,
+  Flex,
+  UnstyledButton,
+} from '@mantine/core';
 import {
   IconBrandWhatsapp,
   IconBrandYoutube,
@@ -126,26 +136,56 @@ export function MainFooter({ data }: MainFooterProps) {
     );
   };
 
+  const handleClickLinkForm = (e: any, link: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.open(
+      link,
+      '_blank' // <- This is what makes it open in a new window.
+    );
+  };
+
   const handleClickLink = (link: string) => {
     const element = document.getElementById('#us');
     element?.scrollIntoView();
   };
 
   const groups = data.map((group) => {
-    const links = group.links.map((link, index) => (
-      <Link
-        href={`#${link.link}`}
-        style={{
-          textDecoration: 'inherit',
-          color: 'inherit',
-          cursor: 'auto',
-        }}
-      >
-        <Text key={index} className={classes.link}>
-          {link.label}
-        </Text>
-      </Link>
-    ));
+    const links = group.links.map((link, index) =>
+      link.link == 'bandera' ? (
+        <UnstyledButton
+          onClick={(e: any) => {
+            handleClickLinkForm(e, 'https://inscripciones.iinternacional.edu.mx/');
+          }}
+          c="#808080"
+        >
+          <Text
+            key={index}
+            className={classes.link}
+            style={{
+              textDecoration: 'inherit',
+              color: 'inherit',
+              cursor: 'auto',
+            }}
+          >
+            {link.label}
+          </Text>
+        </UnstyledButton>
+      ) : (
+        <Link
+          href={`#${link.link}`}
+          style={{
+            textDecoration: 'inherit',
+            color: 'inherit',
+            cursor: 'auto',
+          }}
+        >
+          <Text key={index} className={classes.link}>
+            {link.label}
+          </Text>
+        </Link>
+      )
+    );
 
     return (
       <Flex gap="md" justify="center" align="center" direction="column" wrap="wrap">

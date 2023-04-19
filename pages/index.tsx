@@ -40,7 +40,7 @@ export default function HomePage() {
                 label: 'Reglamento Institucional',
               },
               {
-                link: '',
+                link: 'bandera',
                 label: 'Inscríbete',
               },
             ],
@@ -63,7 +63,7 @@ export default function HomePage() {
               },
               {
                 link: '',
-                label: 'Email: informes@iinternacional.edu.mx',
+                label: 'Email Informes: francisco.lucio@iinternacional.edu.mx',
               },
             ],
           },

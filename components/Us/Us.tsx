@@ -87,7 +87,7 @@ export function Us() {
               </Title>
               <Text fw={500} fz="lg" mb={5} align="justify">
                 Enriquecemos el talento humano con las competencias necesarias para desarrollarse
-                profesionalmente en un entorno de transformación digital
+                profesionalmente en un entorno de transformación digital.
               </Text>
               <div style={{ marginTop: 100 }}>
                 <Title className={classes.title} mt={50} align="center">

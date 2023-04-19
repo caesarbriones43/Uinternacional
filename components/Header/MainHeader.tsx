@@ -259,7 +259,7 @@ export function MainHeader() {
                         );
                       }}
                     >
-                      Inscribete Ahora
+                      Inscríbete Ahora
                     </Text>
                   </Button>
                 </Group>
