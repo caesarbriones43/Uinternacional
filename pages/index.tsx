@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <>
       <MainHeader />
-      <Slider/>
+      <Slider />
       {/* <OurGoals /> */}
       <OurObjective></OurObjective>
       <Us></Us>
@@ -29,18 +29,25 @@ export default function HomePage() {
             links: [
               {
                 link: 'us',
+                isLink: false,
+
                 label: 'Nosotros',
               },
               {
-                link: 'offert',
-                label: 'Oferta Educativa',
-              },
-              {
-                link: '',
+                link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Reglamento+General+IIA-1.pdf',
+                isLink: true,
                 label: 'Reglamento Institucional',
               },
               {
-                link: 'bandera',
+                link: 'offert',
+                isLink: false,
+
+                label: 'Oferta Educativa',
+              },
+            
+              {
+                link: 'https://inscripciones.iinternacional.edu.mx/',
+                isLink: true,
                 label: 'Inscríbete',
               },
             ],
@@ -52,17 +59,24 @@ export default function HomePage() {
                 link: '',
                 label:
                   'Manuel de Velasco Martínez No. 101 – B, Colonia Solidaridad. Rincón de Romos, Ags',
+                isLink: false,
               },
               {
                 link: '',
+                isLink: false,
+
                 label: 'Teléfono: (465)-111-2117',
               },
               {
                 link: '',
+                isLink: false,
+
                 label: 'WhatsApp: (465)-162-1164',
               },
               {
                 link: '',
+                isLink: false,
+
                 label: 'Email Informes: francisco.lucio@iinternacional.edu.mx',
               },
             ],

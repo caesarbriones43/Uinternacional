@@ -122,7 +122,8 @@ const useStyles = createStyles((theme) => ({
 interface MainFooterProps {
   data: {
     title: string;
-    links: { label: string; link: string }[];
+    links: { label: string; link: string,isLink:boolean }[];
+  
   }[];
 }
 
@@ -152,10 +153,10 @@ export function MainFooter({ data }: MainFooterProps) {
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) =>
-      link.link == 'bandera' ? (
+      link.isLink  ? (
         <UnstyledButton
           onClick={(e: any) => {
-            handleClickLinkForm(e, 'https://inscripciones.iinternacional.edu.mx/');
+            handleClickLinkForm(e, link.link);
           }}
           c="#808080"
         >
