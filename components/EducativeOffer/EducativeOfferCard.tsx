@@ -28,7 +28,7 @@ const mockdata = [
     date: 'RVOE SEP: 20211668',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Licenciatura en Pedagogía',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Licenciatura+en+Pedagog%C3%ADa.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Lic.+en+Pedagogi%CC%81a.pdf',
   },
   {
     image:
@@ -36,7 +36,7 @@ const mockdata = [
     date: 'RVOE SEP: 20221587',
     title: 'Maestría en Estadística para Ciencias Sociales',
     rvoes: 'RVOE SEP SEP: 20211668',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/maestria+ciencias+sociales-1.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Mtria.+en+Estadi%CC%81stica+para+ciencias+sociales.pdf',
   },
   {
     image:
@@ -44,7 +44,7 @@ const mockdata = [
     date: 'RVOE SEP: 20211667',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Maestría en Competencias Docentes para la Transformación Digital',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Maestr%C3%ADa+en+Competencias+Docentes+para+la+Transformación+Digital.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Mtria.+en+Competencias+docentes+para+la+transformacio%CC%81n+digital.pdf',
   },
   {
     image:
@@ -52,7 +52,7 @@ const mockdata = [
     date: 'RVOE SEP: 20221693',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Maestría en Dirección e Innovación en los Sistemas de Salud',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/maestria-sistemas+de+salud-1.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Mtria.+en+Direccio%CC%81n+e+innovacio%CC%81n+en+los+sistemas+de+salud.pdf',
   },
   {
     image:
@@ -60,7 +60,7 @@ const mockdata = [
     date: 'RVOE SEP: 20211669',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Doctorado en Dirección e Innovación Digital en los Sistemas de Salud',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Dirección+e+Innovación+Digital+en+los+Sistemas+de+Salud.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Doc.+en+Direccio%CC%81n+e+innovacio%CC%81n+digital+en+los+sistemas+de+salud.pdf',
   },
   {
     image:
@@ -68,15 +68,15 @@ const mockdata = [
     date: 'RVOE SEP: 20211666',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Doctorado en Competencias Docentes para la Transformación Digital',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doc-docente.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Doc.+en+Competencias+docentes+para+la+transformacio%CC%81n+digital.pdf',
   },
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288689/oferta-educativa_0000_Capa_5_vs6cj9.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1682006118/cover_doctorado_en_tecnologias_transformacion_digital_2_qaa6va.jpg',
     date: 'RVOE SEP: 20211665',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Doctorado en Tecnologías de la Transformación Digital',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Doctorado+en+Tecnolog%C3%ADas+de+la+Transformación+Digital.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Doc.+en+Tecnologi%CC%81as+de+la+transformacio%CC%81n+digital.pdf',
   },
   {
     image:
@@ -84,7 +84,7 @@ const mockdata = [
     date: 'RVOE SEP: 20221694',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Doctorado en Derecho',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doctorado+derecho-1.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Doc.+en+Derecho.pdf',
   },
   {
     image:
@@ -92,7 +92,7 @@ const mockdata = [
     date: 'RVOE SEP: 20221692',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Especialidad en Bioética',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/especialidad+bioetica-1.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Especialidad+en++Bioe%CC%81tica.pdf',
   },
 ];
 

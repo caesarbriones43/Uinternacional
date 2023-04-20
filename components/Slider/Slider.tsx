@@ -99,7 +99,7 @@ const data = [
   },
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1681834367/Mtria_en_Direccio%CC%81n_e_innovacio%CC%81n_en_los_SS_azrial.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1682006118/cover_doctorado_en_tecnologias_transformacion_digital_2_qaa6va.jpg',
     category: 'La Universidad de los profesionales digitales',
     title: 'Doctorado en Tecnologías de la Transformación Digital',
   },

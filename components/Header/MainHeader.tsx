@@ -113,47 +113,47 @@ const mockdata = [
   {
     icon: IconSchool,
     title: 'Licenciatura en Pedagogía',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Licenciatura+en+Pedagog%C3%ADa.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Lic.+en+Pedagogi%CC%81a.pdf',
   },
   {
     icon: IconSchool,
     title: 'Maestría en Competencias Docentes para la Transformación Digital',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Maestr%C3%ADa+en+Competencias+Docentes+para+la+Transformación+Digital.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Mtria.+en+Competencias+docentes+para+la+transformacio%CC%81n+digital.pdf',
   },
   {
     icon: IconSchool,
     title: 'Maestría en Estadística para Ciencias Sociales',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/maestria+ciencias+sociales-1.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Mtria.+en+Estadi%CC%81stica+para+ciencias+sociales.pdf',
   },
   {
     icon: IconSchool,
     title: 'Maestría en Dirección e Innovación en los Sistemas de Salud',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/maestria-sistemas+de+salud-1.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Mtria.+en+Direccio%CC%81n+e+innovacio%CC%81n+en+los+sistemas+de+salud.pdf',
   },
   {
     icon: IconSchool,
     title: 'Doctorado en Derecho',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doctorado+derecho-1.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Doc.+en+Derecho.pdf',
   },
   {
     icon: IconSchool,
     title: 'Doctorado en Dirección e Innovación Digital en los Sistemas de Salud',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Dirección+e+Innovación+Digital+en+los+Sistemas+de+Salud.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Doc.+en+Direccio%CC%81n+e+innovacio%CC%81n+digital+en+los+sistemas+de+salud.pdf',
   },
   {
     icon: IconSchool,
     title: 'Doctorado en Tecnologías de la Transformación Digital',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto+-+Doctorado+en+Tecnolog%C3%ADas+de+la+Transformación+Digital.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Doc.+en+Tecnologi%CC%81as+de+la+transformacio%CC%81n+digital.pdf',
   },
   {
     icon: IconSchool,
     title: 'Doctorado en Competencias Docentes para la Transformación Digital',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/doc-docente.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Doc.+en+Competencias+docentes+para+la+transformacio%CC%81n+digital.pdf'    ,
   },
   {
     icon: IconSchool,
     title: 'Especialidad en Bioética',
-    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/especialidad+bioetica-1.pdf',
+    link: 'https://pwa-public.s3.us-west-1.amazonaws.com/oferta-educativa/Folleto.+Especialidad+en++Bioe%CC%81tica.pdf',
   },
 ];
 
