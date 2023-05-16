@@ -24,7 +24,7 @@ import line from './line.svg';
 const mockdata = [
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288694/oferta-educativa_0003_Capa_6_vxtt3o.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1684212688/Maestri%CC%81a_en_Competencias_Docentes_para_la_Transformacio%CC%81n_Digital_BUENA_hxq6g3.jpg',
     date: 'RVOE SEP: 20211668',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Licenciatura en Pedagogía',
@@ -40,7 +40,7 @@ const mockdata = [
   },
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288690/oferta-educativa_0001_Capa_4_hbtolw.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1684212543/Competencias_Docentes_para_la_Transformacio%CC%81n_Digital_buena_ngoolh.jpg  ',
     date: 'RVOE SEP: 20211667',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Maestría en Competencias Docentes para la Transformación Digital',
@@ -56,7 +56,7 @@ const mockdata = [
   },
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288692/oferta-educativa_0002_Capa_3_bovhht.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1684212785/pedagogia_0003_Capa_8_m0g6tq.jpg',
     date: 'RVOE SEP: 20211669',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Doctorado en Dirección e Innovación Digital en los Sistemas de Salud',
@@ -64,7 +64,7 @@ const mockdata = [
   },
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640288695/oferta-educativa_0004_Capa_2_jneirn.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1684212363/Doctorado_en_Tecnologi%CC%81as_de_la_Transformacio%CC%81n_Digital_buena_yfofgx.jpg',
     date: 'RVOE SEP: 20211666',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Doctorado en Competencias Docentes para la Transformación Digital',
@@ -72,7 +72,7 @@ const mockdata = [
   },
   {
     image:
-      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1682006118/cover_doctorado_en_tecnologias_transformacion_digital_2_qaa6va.jpg',
+      'https://res.cloudinary.com/dslc2vjcz/image/upload/v1684211817/Tecnologi%CC%81as_de_la_Transformacio%CC%81n_Digital_BUENA_nmebjq.jpg',
     date: 'RVOE SEP: 20211665',
     rvoes: 'RVOE SEP SEP: 20211668',
     title: 'Doctorado en Tecnologías de la Transformación Digital',

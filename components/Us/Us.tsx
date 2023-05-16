@@ -102,7 +102,7 @@ export function Us() {
             </div>
             <Image
               src={
-                'https://res.cloudinary.com/dslc2vjcz/image/upload/v1640289693/nosotros_ntqn5b.jpg'
+                'https://res.cloudinary.com/dslc2vjcz/image/upload/v1684212957/nosotros_nvhrac.jpg'
               }
               className={classes.image}
             />
